@@ -7,3 +7,23 @@
 a {
   text-decoration: none;
 }
+
+.banner {
+  position: relative;
+}
+
+.countdown {
+  position: absolute;
+  top: 30%;
+  right: 15%;
+  text-align: center;
+  color: #fff;
+  font-size: 30px;
+  background: #b6b6b61f;
+  padding: 30px 50px;
+  border-radius: 8px;
+}
+
+.countdown h1 {
+  font-size: 50px;
+}
