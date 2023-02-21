@@ -3,15 +3,21 @@ import React, { useEffect, useState } from "react";
 export default function CountDown() {
   const calculateTimeLeft = () => {
     let year = new Date().getFullYear();
-    const difference = +new Date(`${year}-03-24`) - +new Date();
+    const difference = +new Date(`${year}-03-23`) - +new Date();
     let timeLeft = {};
 
     if (difference > 0) {
       timeLeft = {
-        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((difference / 1000 / 60) % 60),
-        seconds: Math.floor((difference / 1000) % 60),
+        দিন: Math.floor(difference / (1000 * 60 * 60 * 24)).toLocaleString(
+          "bn-BD"
+        ),
+        ঘণ্টা: Math.floor((difference / (1000 * 60 * 60)) % 24).toLocaleString(
+          "bn-BD"
+        ),
+        মিনিট: Math.floor((difference / 1000 / 60) % 60).toLocaleString(
+          "bn-BD"
+        ),
+        সেকেন্ড: Math.floor((difference / 1000) % 60).toLocaleString("bn-BD"),
       };
     }
 
@@ -36,13 +42,13 @@ export default function CountDown() {
 
     timerComponents.push(
       <span key={Math.random()}>
-        {timeLeft[interval]} {interval}{" "}
+        <b>{timeLeft[interval] + " "}</b> {" " + interval}
       </span>
     );
   });
   return (
     <div className="countdown">
-      <h1>Ramadan Countdown</h1>
+      <h1>রমযান এর বাকি</h1>
       {timerComponents.length ? timerComponents : <span>Time's up!</span>}
     </div>
   );
