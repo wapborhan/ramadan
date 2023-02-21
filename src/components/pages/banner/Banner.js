@@ -1,6 +1,6 @@
 import React from "react";
-import BannerImg from "../../assets/images/mosque.jpg";
-import PrayerTime from "../PrayerTime";
+import BannerImg from "../../assets/images/banner-2.png";
+import BannerTop from "../../assets/images/top.png";
 import CountDown from "./CountDown";
 
 export default function Banner() {
@@ -9,14 +9,17 @@ export default function Banner() {
       className="banner"
       style={{
         paddingTop: "80px",
+        background: "#868686",
         backgroundImage: `url(${BannerImg})`,
         height: "100vh",
         backgroundSize: "cover",
-        backgroundPosition: "center",
+        backgroundPosition: "bottom",
       }}
     >
+      <div className="image">
+        <img src={BannerTop} alt="dsd" />
+      </div>
       <CountDown />
-      <PrayerTime />
     </div>
   );
 }
