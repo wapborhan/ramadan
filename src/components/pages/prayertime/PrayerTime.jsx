@@ -33,7 +33,7 @@ class PrayerTime extends Component {
         .format("hh:mm A");
       return (
         <div key={prayer.time[0]} className="col-md-4">
-          <div className="card mt-3 text-center">
+          <div className="card mt-3 text-center shadow">
             <div className="prayer-card card-body">
               <h3>{prayer.time[0]}</h3>
               <p>{perfectTime}</p>
