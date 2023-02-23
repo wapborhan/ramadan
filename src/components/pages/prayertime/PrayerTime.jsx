@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-import { CircularProgressbar } from "react-circular-progressbar";
-import "react-circular-progressbar/dist/styles.css";
 import moment from "moment";
 
 import "moment/min/locales.min";
@@ -11,12 +9,14 @@ class PrayerTime extends Component {
   render() {
     if (!this.props.prayerTime) {
       return (
-        <div className="row">
-          <div className="col-md-12">
-            <div className="error-msg">
-              <p>
-                আপনার এলাকার নাম প্রবেশ করুন, বা অটোমেটিক লোকেশান অ্যালাউ করুন
-              </p>
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12">
+              <div className="error-msg">
+                <p className="py-5 text-center">
+                  সার্ভার থেকে তথ্য পেতে আপনার ইন্টারনেট সংযোগ পরীক্ষা করেন।
+                </p>
+              </div>
             </div>
           </div>
         </div>

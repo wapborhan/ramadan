@@ -35,9 +35,15 @@ a {
   font-weight: 700;
   font-family: "Hind Siliguri", sans-serif;
 }
+
 .countdown span {
   font-family: "Hind Siliguri", sans-serif;
   margin-left: 5px;
+}
+.error-msg p {
+  font-family: "Hind Siliguri", sans-serif;
+  font-weight: 700;
+  font-size: 35px;
 }
 .prayer-card p {
   font-family: "Digital-7";
