@@ -46,7 +46,7 @@ export default class App extends Component {
     console.log(this.state.prayerTime);
     return (
       <Fragment>
-        {/* <Header /> */}
+        <Header />
         <Main data={this.state.prayerTime} />
         <Footer />
       </Fragment>
