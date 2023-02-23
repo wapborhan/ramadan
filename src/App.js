@@ -1,8 +1,10 @@
 import React, { Component, Fragment } from "react";
-import Header from "./components/pages/header/Header";
-import Main from "./components/pages/Main";
-import Footer from "./components/pages/footer/Footer";
 import axios from "axios";
+import { Route, Routes } from "react-router-dom";
+import Header from "./components/header/Header";
+import Main from "./pages/Main";
+import Footer from "./components/footer/Footer";
+import NotFound from "./components/notfound/NotFound";
 
 export default class App extends Component {
   constructor() {
@@ -47,7 +49,14 @@ export default class App extends Component {
     return (
       <Fragment>
         <Header />
-        <Main data={this.state.prayerTime} />
+        <Routes>
+          <Route
+            path="/ramadan"
+            exact
+            element={<Main data={this.state.prayerTime} />}
+          />
+          <Route path="*" exact element={<NotFound />} />
+        </Routes>
         <Footer />
       </Fragment>
     );

@@ -58,6 +58,12 @@ a {
   top: 0;
   right: 5%;
 }
+.header-section {
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
 .is-sticky {
   position: fixed;
   display: block;
@@ -70,6 +76,10 @@ a {
   animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
   padding-top: 0px;
   padding-bottom: 0px;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 /* Clock */

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
   const [sticky, setSticky] = useState("");
@@ -24,13 +25,13 @@ const Header = () => {
   return (
     <>
       <header className={classes}>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
           <div className="container">
-            <a class="navbar-brand" href="#">
+            <NavLink className="navbar-brand" to="/ramadan">
               Ramadan
-            </a>
+            </NavLink>
             <button
-              class="navbar-toggler"
+              className="navbar-toggler"
               type="button"
               data-toggle="collapse"
               data-target="#navbarSupportedContent"
@@ -38,20 +39,24 @@ const Header = () => {
               aria-expanded="false"
               aria-label="Toggle navigation"
             >
-              <span class="navbar-toggler-icon">.</span>
+              <span className="navbar-toggler-icon">.</span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav ms-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="#">
-                    Home
-                  </a>
+            <div
+              className="collapse navbar-collapse"
+              id="navbarSupportedContent"
+            >
+              <ul className="navbar-nav ms-auto">
+                <li className="nav-item active">
+                  <NavLink className="nav-link" to="/challange">
+                    30 days Chalange
+                  </NavLink>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">
+                <li className="nav-item">
+                  <NavLink></NavLink>
+                  <NavLink className="nav-link" href="#">
                     Link
-                  </a>
+                  </NavLink>
                 </li>
               </ul>
             </div>
