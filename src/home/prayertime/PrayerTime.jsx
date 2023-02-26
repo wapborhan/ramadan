@@ -23,6 +23,7 @@ class PrayerTime extends Component {
       );
     }
     // console.log(this.props.prayerTime);
+
     const item = this.props.prayerTime.map((prayer, a, b) => {
       // console.log(prayer.time[1]);
 
@@ -31,9 +32,10 @@ class PrayerTime extends Component {
         .hours(timeOr[0])
         .minutes(timeOr[1])
         .format("hh:mm A");
+
       return (
         <div key={prayer.time[0]} className="col-md-4">
-          <div className="card mt-3 text-center shadow">
+          <div className="card mt-3 text-center shadow ">
             <div className="prayer-card card-body">
               <h3>{prayer.time[0]}</h3>
               <p>{perfectTime}</p>
@@ -49,7 +51,9 @@ class PrayerTime extends Component {
             <Clock />
           </div>
           <div className="col-md-8">
-            <div className="row">{item}</div>
+            <div className="prayertime">
+              <div className="row">{item}</div>
+            </div>
           </div>
         </div>
       </div>

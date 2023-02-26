@@ -215,3 +215,7 @@ a {
   position: relative;
   height: 500px;
 }
+.prayertime .active {
+  background: green;
+  color: white;
+}

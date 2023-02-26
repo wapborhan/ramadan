@@ -6,6 +6,7 @@ import Homepage from "./home/Homepage";
 import Footer from "./components/footer/Footer";
 import NotFound from "./components/notfound/NotFound";
 import Challange from "./pages/challange/Challange";
+import Prayer from "./home/prayertime/Prayer";
 
 export default class App extends Component {
   constructor() {
@@ -15,6 +16,7 @@ export default class App extends Component {
       long: "89.11046038653564",
       prayerTime: null,
       timestamp: new Date(),
+      prayer: null,
     };
   }
   componentDidMount() {
@@ -28,7 +30,7 @@ export default class App extends Component {
         const data = response.data.data.timings;
         this.setState({
           prayerTime: [
-            { time: ["সেহরী শেষ", data.Imsak] },
+            { time: ["সেহরি শেষ", data.Imsak] },
             { time: ["ফজর", data.Fajr] },
             { time: ["সূর্যোদয়", data.Sunrise] },
             { time: ["জোহর", data.Dhuhr] },
@@ -38,6 +40,18 @@ export default class App extends Component {
             { time: ["এশা", data.Isha] },
             { time: ["মধ্যরাত", data.Midnight] },
           ],
+
+          // prayer: [
+          //   { sahri: data.Imsak },
+          //   { fazr: data.Fajr },
+          //   { sunrise: data.Sunrise },
+          //   { johr: data.Dhuhr },
+          //   { asr: data.Asr },
+          //   { sunset: data.Sunset },
+          //   { magrib: data.Maghrib },
+          //   { isha: data.Isha },
+          //   { midnight: data.Midnight },
+          // ],
         });
       })
       .catch((error) => {
@@ -46,11 +60,16 @@ export default class App extends Component {
   }
 
   render() {
-    console.log(this.state.prayerTime);
+    console.log(this.state.prayer);
     return (
       <Fragment>
         <Header />
         <Routes>
+          {/* <Route
+            path="/ramadan"
+            exact
+            element={<Prayer data={this.state.prayer} />}
+          /> */}
           <Route
             path="/ramadan"
             exact
