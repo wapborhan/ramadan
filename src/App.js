@@ -2,9 +2,10 @@ import React, { Component, Fragment } from "react";
 import axios from "axios";
 import { Route, Routes } from "react-router-dom";
 import Header from "./components/header/Header";
-import Main from "./pages/Main";
+import Homepage from "./home/Homepage";
 import Footer from "./components/footer/Footer";
 import NotFound from "./components/notfound/NotFound";
+import Challange from "./pages/challange/Challange";
 
 export default class App extends Component {
   constructor() {
@@ -53,7 +54,12 @@ export default class App extends Component {
           <Route
             path="/ramadan"
             exact
-            element={<Main data={this.state.prayerTime} />}
+            element={<Homepage data={this.state.prayerTime} />}
+          />
+          <Route
+            path="/challange"
+            exact
+            element={<Challange data={this.state.prayerTime} />}
           />
           <Route path="*" exact element={<NotFound />} />
         </Routes>
