@@ -47,7 +47,7 @@ export default function CountDown() {
     );
   });
   return (
-    <div className="countdown">
+    <div className="countdown pat-bg opc65 back-blend-multiply thm-bg">
       <h1>রমযান এর বাকি</h1>
       {timerComponents.length ? timerComponents : <span>Time's up!</span>}
     </div>

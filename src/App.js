@@ -2,11 +2,10 @@ import React, { Component, Fragment } from "react";
 import axios from "axios";
 import { Route, Routes } from "react-router-dom";
 import Header from "./components/header/Header";
-import Homepage from "./home/Homepage";
+import Homepage from "./home/HomePage";
 import Footer from "./components/footer/Footer";
 import NotFound from "./components/notfound/NotFound";
 import Challange from "./pages/challange/Challange";
-import Prayer from "./home/prayertime/Prayer";
 
 export default class App extends Component {
   constructor() {
@@ -29,29 +28,29 @@ export default class App extends Component {
         // console.log(response);
         const data = response.data.data.timings;
         this.setState({
-          prayerTime: [
-            { time: ["সেহরি শেষ", data.Imsak] },
-            { time: ["ফজর", data.Fajr] },
-            { time: ["সূর্যোদয়", data.Sunrise] },
-            { time: ["জোহর", data.Dhuhr] },
-            { time: ["আছর", data.Asr] },
-            { time: ["সূর্যাস্ত", data.Sunset] },
-            { time: ["মাগরিব", data.Maghrib] },
-            { time: ["এশা", data.Isha] },
-            { time: ["মধ্যরাত", data.Midnight] },
-          ],
-
-          // prayer: [
-          //   { sahri: data.Imsak },
-          //   { fazr: data.Fajr },
-          //   { sunrise: data.Sunrise },
-          //   { johr: data.Dhuhr },
-          //   { asr: data.Asr },
-          //   { sunset: data.Sunset },
-          //   { magrib: data.Maghrib },
-          //   { isha: data.Isha },
-          //   { midnight: data.Midnight },
+          // prayerTime: [
+          //   { time: ["সেহরি শেষ", data.Imsak] },
+          //   { time: ["ফজর", data.Fajr] },
+          //   { time: ["সূর্যোদয়", data.Sunrise] },
+          //   { time: ["জোহর", data.Dhuhr] },
+          //   { time: ["আছর", data.Asr] },
+          //   { time: ["সূর্যাস্ত", data.Sunset] },
+          //   { time: ["মাগরিব", data.Maghrib] },
+          //   { time: ["এশা", data.Isha] },
+          //   { time: ["মধ্যরাত", data.Midnight] },
           // ],
+
+          prayer: [
+            { sahri: data.Imsak },
+            { fazr: data.Fajr },
+            { sunrise: data.Sunrise },
+            { johr: data.Dhuhr },
+            { asr: data.Asr },
+            { sunset: data.Sunset },
+            { magrib: data.Maghrib },
+            { isha: data.Isha },
+            { midnight: data.Midnight },
+          ],
         });
       })
       .catch((error) => {
@@ -60,10 +59,10 @@ export default class App extends Component {
   }
 
   render() {
-    console.log(this.state.prayer);
+    // console.log(this.state.prayer);
     return (
       <Fragment>
-        <Header />
+        {/* <Header /> */}
         <Routes>
           {/* <Route
             path="/ramadan"
@@ -73,7 +72,7 @@ export default class App extends Component {
           <Route
             path="/ramadan"
             exact
-            element={<Homepage data={this.state.prayerTime} />}
+            element={<Homepage data={this.state.prayer} />}
           />
           <Route
             path="/challange"
@@ -82,7 +81,7 @@ export default class App extends Component {
           />
           <Route path="*" exact element={<NotFound />} />
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </Fragment>
     );
   }

@@ -24,8 +24,9 @@ a {
   text-align: center;
   color: #fff;
   font-size: 30px;
-  background: #b6b6b61f;
-  /* width: 493px; */
+  background-image: url(../images/pattern-bg.jpg);
+  transform: translateY(-50%);
+  width: 45%;
   padding: 30px 30px;
   border-radius: 8px;
 }
@@ -98,8 +99,10 @@ a {
   transform: translate(-50%, -50%);
   box-shadow: 0 2px 30px rgba(0, 0, 0, 0.2);
   font-size: 24px;
-  color: #444;
+  color: #fff;
   text-align: center;
+  background-color: var(--theme-color);
+  background-image: url(../images/pattern-bg.jpg);
 }
 
 .clock::after {
@@ -218,4 +221,15 @@ a {
 .prayertime .active {
   background: green;
   color: white;
+}
+.datehide {
+  display: none;
+}
+@media (max-width: 1240px) {
+  .datehide {
+    display: block;
+  }
+  .dateshow {
+    display: none;
+  }
 }
